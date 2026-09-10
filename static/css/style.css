@@ -1,0 +1,1189 @@
+/* ========================================
+   VENOM SPORTS FOOTBALL ACADEMY
+   Custom Styles
+   ======================================== */
+
+:root {
+    --venom-green: #0b3d2e;
+    --venom-green-light: #126b4f;
+    --venom-accent: #4caf50;
+    --venom-black: #050505;
+    --venom-dark: #0d0d0d;
+    --venom-card: #101714;
+    --venom-white: #f5f5f5;
+    --venom-gray: #b8b8b8;
+}
+
+
+/* ========================================
+   GLOBAL PAGE
+   ======================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(18, 107, 79, 0.10),
+            transparent 35%
+        ),
+        var(--venom-black);
+
+    color: var(--venom-white);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+
+/* ========================================
+   CONTENT WIDTH
+   ======================================== */
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 58px;
+
+    background: var(--venom-black) !important;
+
+    border-bottom: 2px solid var(--venom-green);
+}
+
+.navbar > .container {
+    max-width: 1140px;
+}
+
+
+/* ---------- BRAND ---------- */
+
+.navbar-brand {
+    color: var(--venom-white) !important;
+    text-decoration: none;
+
+    font-weight: 900;
+
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.navbar-brand:hover {
+    color: var(--venom-accent) !important;
+}
+
+.venom-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    line-height: 1;
+    white-space: nowrap;
+
+    max-width: 220px;
+    overflow: visible;
+}
+
+.venom-brand-main {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 0.82rem;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.venom-brand-sub {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.40rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- NAV LINKS ---------- */
+
+.navbar-nav {
+    align-items: center;
+    gap: 0;
+}
+
+.nav-link {
+    color: var(--venom-gray) !important;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--venom-accent) !important;
+}
+
+
+/* ---------- NAVBAR TOGGLER ---------- */
+
+.navbar-toggler {
+    padding: 5px 8px;
+
+    border-color: var(--venom-green-light) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow:
+        0 0 0 0.12rem rgba(76, 175, 80, 0.25);
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.venom-hero {
+    min-height: 380px;
+
+    margin: -24px -12px 30px;
+    padding: 42px 36px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 5, 5, 0.98) 0%,
+            rgba(5, 5, 5, 0.90) 45%,
+            rgba(11, 61, 46, 0.50) 100%
+        );
+
+    border-bottom: 3px solid var(--venom-green);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.venom-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: -150px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    border: 2px solid rgba(76, 175, 80, 0.15);
+
+    pointer-events: none;
+}
+
+.venom-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -75px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    border: 1px solid rgba(18, 107, 79, 0.30);
+
+    pointer-events: none;
+}
+
+.venom-hero-content {
+    max-width: 560px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.venom-eyebrow {
+    color: var(--venom-accent);
+
+    font-size: 0.62rem;
+    font-weight: 900;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 7px;
+}
+
+.venom-hero h1 {
+    margin-bottom: 13px;
+
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 900;
+
+    line-height: 0.98;
+    letter-spacing: -1px;
+}
+
+.venom-hero-text {
+    max-width: 480px;
+
+    margin-bottom: 17px;
+
+    color: var(--venom-gray);
+
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.venom-hero-buttons {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+    font-size: 0.75rem;
+}
+
+.btn-primary {
+    background-color: var(--venom-green) !important;
+    border-color: var(--venom-green) !important;
+
+    color: white !important;
+
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: var(--venom-green-light) !important;
+    border-color: var(--venom-green-light) !important;
+}
+
+.btn-outline-light {
+    color: var(--venom-white) !important;
+
+    border-color: #777 !important;
+
+    font-weight: 700;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--venom-green) !important;
+    border-color: var(--venom-green) !important;
+
+    color: white !important;
+}
+
+
+/* ========================================
+   GENERAL HOME SECTION TYPOGRAPHY
+   ======================================== */
+
+/*
+   Keeps large Home-page headings compact.
+   This specifically fixes headings such as:
+
+   "From 7 Players
+    To A Growing Football Community"
+
+   and
+
+   "Train. Compete.
+    Take The Next Step."
+*/
+
+.venom-section > .row h2 {
+    margin-bottom: 0;
+
+    font-size: 1.45rem;
+    font-weight: 900;
+
+    line-height: 1.08;
+}
+
+.venom-section > .row > div > p:not(.venom-eyebrow) {
+    color: var(--venom-gray);
+
+    font-size: 0.80rem;
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   STATS
+   ======================================== */
+
+.venom-stats {
+    margin-bottom: 30px;
+}
+
+.venom-stat {
+    height: 100%;
+
+    padding: 17px 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--venom-card),
+            #080b0a
+        );
+
+    border: 1px solid #1d2924;
+    border-radius: 8px;
+}
+
+.venom-stat h2 {
+    margin-bottom: 2px;
+
+    color: var(--venom-accent);
+
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.venom-stat p {
+    margin: 0;
+
+    color: var(--venom-gray);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.venom-stat hr {
+    margin: 12px 0;
+
+    border-color: #1d2924;
+}
+
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.venom-section {
+    margin-bottom: 30px;
+}
+
+.venom-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 15px;
+
+    margin-bottom: 13px;
+}
+
+.venom-section-heading h2 {
+    margin: 0;
+
+    font-size: 1.35rem;
+    font-weight: 900;
+}
+
+.venom-section-link {
+    color: var(--venom-accent);
+
+    text-decoration: none;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.venom-section-link:hover {
+    color: #7ed957;
+}
+
+
+/* ========================================
+   MATCH CARDS
+   ======================================== */
+
+.venom-match-card {
+    height: 100%;
+
+    padding: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--venom-card),
+            #101b17
+        );
+
+    border: 1px solid #1d2924;
+    border-left: 3px solid var(--venom-green-light);
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.venom-match-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--venom-green-light);
+}
+
+.venom-match-label {
+    margin-bottom: 7px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.55rem;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.venom-match-card h3 {
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.venom-match-card h3 span {
+    margin: 0 5px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.62rem;
+}
+
+.venom-match-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 10px;
+
+    color: var(--venom-gray);
+
+    font-size: 0.70rem;
+}
+
+
+/* ========================================
+   ANNOUNCEMENTS
+   ======================================== */
+
+.venom-announcement {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    background: var(--venom-card);
+
+    border: 1px solid #1d2924;
+    border-radius: 8px;
+
+    color: var(--venom-white);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.venom-announcement:hover {
+    color: white;
+
+    border-color: var(--venom-green-light);
+
+    transform: translateY(-4px);
+}
+
+.venom-announcement-label {
+    margin-bottom: 5px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.55rem;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.venom-announcement h3 {
+    margin: 0;
+
+    font-size: 0.88rem;
+}
+
+.venom-arrow {
+    color: var(--venom-accent);
+
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.venom-empty {
+    padding: 20px;
+
+    text-align: center;
+
+    color: var(--venom-gray);
+
+    background: var(--venom-dark);
+
+    border: 1px dashed #333;
+    border-radius: 8px;
+
+    font-size: 0.80rem;
+}
+
+
+/* ========================================
+   CTA
+   ======================================== */
+
+.venom-cta {
+    margin: 10px 0 22px;
+
+    padding: 35px 18px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071d16,
+            var(--venom-black)
+        );
+
+    border-top: 1px solid var(--venom-green-light);
+    border-bottom: 1px solid var(--venom-green-light);
+}
+
+.venom-cta h2 {
+    margin: 7px 0 11px;
+
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    font-weight: 900;
+
+    line-height: 0.95;
+}
+
+.venom-cta p:not(.venom-eyebrow) {
+    margin-bottom: 15px;
+
+    color: var(--venom-gray);
+
+    font-size: 0.82rem;
+}
+
+
+/* ========================================
+   PAGE HEADERS
+   ======================================== */
+
+.venom-page-header {
+    padding: 32px 0 24px;
+}
+
+.venom-page-header h1 {
+    margin: 0 0 10px;
+
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+
+    line-height: 0.95;
+    letter-spacing: -1px;
+}
+
+.venom-page-header p:not(.venom-eyebrow) {
+    max-width: 560px;
+
+    margin: 0;
+
+    color: var(--venom-gray);
+
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   TEAMS
+   ======================================== */
+
+.venom-teams {
+    padding-bottom: 45px;
+}
+
+.venom-team-card {
+    height: 100%;
+    min-height: 240px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101714 0%,
+            #080b0a 70%,
+            #06150f 100%
+        );
+
+    border: 1px solid #1d2924;
+    border-top: 3px solid var(--venom-green);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.venom-team-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: -60px;
+    bottom: -60px;
+
+    border: 1px solid rgba(76, 175, 80, 0.15);
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+}
+
+.venom-team-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--venom-green-light);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.venom-team-number {
+    position: absolute;
+
+    top: 13px;
+    right: 18px;
+
+    color: rgba(76, 175, 80, 0.22);
+
+    font-size: 3rem;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+.venom-team-content {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 35px;
+}
+
+.venom-team-label {
+    margin-bottom: 8px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.60rem;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.venom-team-card h2 {
+    margin: 0 0 6px;
+
+    color: var(--venom-white);
+
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+
+.venom-team-card p:not(.venom-team-label) {
+    color: var(--venom-gray);
+
+    font-size: 0.80rem;
+    line-height: 1.5;
+}
+
+.venom-team-category {
+    margin-bottom: 20px;
+
+    color: var(--venom-gray);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.venom-team-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    color: var(--venom-white);
+
+    background: var(--venom-green);
+
+    border: 1px solid var(--venom-green);
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    transition: 0.2s ease;
+}
+
+.venom-team-button span {
+    color: var(--venom-accent);
+
+    font-size: 0.9rem;
+}
+
+.venom-team-button:hover {
+    color: white;
+
+    background: var(--venom-green-light);
+    border-color: var(--venom-green-light);
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.venom-footer {
+    width: 100%;
+
+    background: var(--venom-black);
+
+    border-top: 2px solid var(--venom-green);
+
+    padding: 30px 0 14px;
+
+    color: var(--venom-white);
+}
+
+.venom-footer h5 {
+    margin-bottom: 12px;
+
+    color: var(--venom-accent);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.venom-footer-brand {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1.45rem;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+}
+
+.venom-footer-academy {
+    margin-top: 3px;
+    margin-bottom: 10px;
+
+    color: var(--venom-accent) !important;
+
+    font-size: 0.55rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.venom-footer p {
+    color: var(--venom-gray);
+
+    font-size: 0.75rem;
+}
+
+.venom-footer a {
+    color: var(--venom-gray);
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    transition: 0.2s ease;
+}
+
+.venom-footer a:hover {
+    color: var(--venom-accent);
+}
+
+.venom-footer hr {
+    margin: 20px 0 12px;
+
+    border-color: var(--venom-green);
+
+    opacity: 0.8;
+}
+
+.venom-footer-contact {
+    color: var(--venom-accent) !important;
+
+    font-size: 0.72rem !important;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* ========================================
+   TABLET / NAVBAR COLLAPSE
+   ======================================== */
+
+@media (max-width: 1199px) {
+
+    .venom-brand {
+        max-width: 190px;
+    }
+
+    .venom-brand-main {
+        font-size: 0.78rem;
+        letter-spacing: 1.7px;
+    }
+
+    .venom-brand-sub {
+        font-size: 0.37rem;
+        letter-spacing: 0.8px;
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+
+        padding-top: 10px;
+        padding-bottom: 7px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 7px 0 !important;
+
+        font-size: 0.82rem;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        max-width: 100%;
+    }
+
+    .venom-hero {
+        min-height: 360px;
+
+        margin-left: -12px;
+        margin-right: -12px;
+
+        padding: 35px 22px;
+    }
+
+    .venom-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .venom-hero-text {
+        font-size: 0.80rem;
+    }
+
+    .venom-section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .venom-hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .venom-page-header {
+        padding: 28px 0 22px;
+    }
+
+    .venom-page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .venom-team-card {
+        min-height: 230px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 576px) {
+
+    .venom-brand {
+        max-width: 180px;
+    }
+
+    .venom-brand-main {
+        font-size: 0.74rem;
+        letter-spacing: 1.5px;
+    }
+
+    .venom-brand-sub {
+        font-size: 0.35rem;
+        letter-spacing: 0.7px;
+    }
+
+    .venom-hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .venom-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .venom-section > .row h2 {
+        font-size: 1.3rem;
+    }
+
+    .venom-stat h2 {
+        font-size: 1.45rem;
+    }
+}
+/* Fix navbar brand clipping */
+.navbar {
+    min-height: 66px;
+}
+
+.navbar > .container {
+    min-height: 66px;
+}
+
+.venom-brand {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.venom-brand-sub {
+    margin-top: 4px;
+    white-space: nowrap;
+}
+/* Home page side spacing only */
+.home-page {
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-page {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+/* =========================================================
+   GLOBAL PAGE SIDE SPACING
+========================================================= */
+
+main {
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+/* ========================================
+   ABOUT PAGE CARDS
+======================================== */
+
+.about-card {
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101714 0%,
+            #080b0a 70%,
+            #06150f 100%
+        ) !important;
+
+    border: 1px solid #1d2924 !important;
+    border-top: 3px solid var(--venom-green);
+
+    border-radius: 8px;
+
+    color: var(--venom-white);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--venom-green-light) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.about-card h2,
+.about-card h3 {
+    color: var(--venom-white);
+}
+
+.about-card p {
+    color: var(--venom-gray);
+}
+
+.about-card strong {
+    color: var(--venom-white);
+}
+
+.about-card .display-4 {
+    color: var(--venom-accent);
+}
+
+.about-card .text-muted {
+    color: var(--venom-gray) !important;
+}
+/* Mobile announcement header */
+@media (max-width: 576px) {
+    .venom-page-header h1 {
+        font-size: 2.1rem;
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+    }
+}
+/* Mobile announcement title */
+@media (max-width: 576px) {
+    .announcement-title {
+        font-size: 1.8rem;
+        line-height: 1.15;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+}
+/* Mobile announcements page heading */
+@media (max-width: 576px) {
+    .announcement-page-title {
+        font-size: 1.7rem;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Players - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<section class="venom-page-header">
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+    <h1>OUR PLAYERS</h1>
+
+    <p>Developing the next generation of footballers.</p>
+</section>
+
+<section class="venom-players">
+    <div class="row g-4">
+
+        {% for player in players %}
+        <div class="col-md-3">
+
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">
+                    {% if forloop.counter < 10 %}
+                        0{{ forloop.counter }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        VENOM PLAYER
+                    </p>
+
+                    <h2>{{ player.name }}</h2>
+
+                    <p class="venom-team-category">
+                        {{ player.get_position_display }}
+                    </p>
+
+                    <p class="small">
+                        {{ player.team.name }}
+                    </p>
+
+                    <a href="{% url 'player_detail' player.pk %}"
+                       class="venom-team-button">
+                        VIEW PROFILE <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        {% empty %}
+        <div class="col-12">
+            <div class="venom-empty">
+                No players added yet.
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}
+```

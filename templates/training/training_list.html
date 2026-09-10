@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Training - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<section class="venom-page-header">
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+    <h1>TRAINING SCHEDULE</h1>
+
+    <p>Stay up to date with upcoming training sessions.</p>
+</section>
+
+<section class="venom-training">
+
+    <div class="table-responsive">
+
+        <table class="table table-dark table-hover align-middle">
+
+            <thead>
+                <tr>
+                    <th>TEAM</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                    <th>VENUE</th>
+                    <th>FOCUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for s in sessions %}
+                <tr>
+
+                    <td>
+                        <strong>{{ s.team.name }}</strong>
+                    </td>
+
+                    <td>
+                        {{ s.date }}
+                    </td>
+
+                    <td>
+                        {{ s.time }}
+                    </td>
+
+                    <td>
+                        {{ s.venue }}
+                    </td>
+
+                    <td>
+                        {{ s.focus_area }}
+                    </td>
+
+                </tr>
+
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-muted text-center py-4">
+                        No training sessions scheduled.
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

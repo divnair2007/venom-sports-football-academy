@@ -1,0 +1,511 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Venom Sports Football Academy{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero Section -->
+<section class="venom-hero">
+    <div class="venom-hero-content">
+
+        <p class="venom-eyebrow">
+            VENOM SPORTS FOOTBALL ACADEMY
+        </p>
+
+        <h1>
+            BUILT TO PLAY.<br>
+            BUILT TO WIN.
+        </h1>
+
+        <p class="venom-hero-text">
+            Professional football training, competitive exposure
+            and player development for the next generation of footballers.
+        </p>
+
+        <div class="venom-hero-buttons">
+
+            <a href="{% url 'team_list' %}"
+               class="btn btn-primary btn-lg">
+                Explore Our Teams
+            </a>
+
+            <a href="{% url 'about' %}"
+               class="btn btn-outline-light btn-lg">
+                About Venom
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Academy Introduction -->
+<section class="venom-section">
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+
+            <p class="venom-eyebrow">
+                SINCE JUNE 2019
+            </p>
+
+            <h2>
+                From 7 Players<br>
+                To A Growing Football Community
+            </h2>
+
+            <p class="mt-3">
+                Venom Sports Football Academy began its journey in
+                June 2019 with just <strong>2 coaches and 7 players</strong>.
+            </p>
+
+            <p>
+                Within two months, the academy grew to 27 players,
+                and within seven months, reached 80 players.
+                Today, Venom continues to develop young footballers
+                through professional coaching, discipline, opportunity
+                and competitive football.
+            </p>
+
+            <a href="{% url 'about' %}"
+               class="venom-section-link">
+                Discover Our Story →
+            </a>
+
+        </div>
+
+        <div class="col-lg-5">
+
+            <div class="venom-stat">
+
+                <h2>150</h2>
+
+                <p>
+                    ACTIVE PLAYERS
+                </p>
+
+                <hr>
+
+                <h2>4–18</h2>
+
+                <p>
+                    AGE GROUP
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Academy Stats -->
+<section class="venom-stats">
+
+    <div class="row text-center g-4">
+
+        <div class="col-md-3">
+
+            <div class="venom-stat">
+                <h2>2019</h2>
+                <p>FOUNDED</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="venom-stat">
+                <h2>{{ team_count }}</h2>
+                <p>TEAMS</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="venom-stat">
+                <h2>8</h2>
+                <p>TRAINING CENTRES</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="venom-stat">
+                <h2>4–18</h2>
+                <p>PLAYER AGE GROUP</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- What We Develop -->
+<section class="venom-section">
+
+    <div class="venom-section-heading">
+
+        <div>
+
+            <p class="venom-eyebrow">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                More Than Just Football
+            </h2>
+
+        </div>
+
+        <a href="{% url 'about' %}"
+           class="venom-section-link">
+            Our Philosophy →
+        </a>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="venom-team-card h-100">
+
+                <div class="venom-team-number">
+                    01
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        DEVELOPMENT
+                    </p>
+
+                    <h2>
+                        Technical Skills
+                    </h2>
+
+                    <p>
+                        Building strong technical foundations
+                        through professional football training.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="venom-team-card h-100">
+
+                <div class="venom-team-number">
+                    02
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        MINDSET
+                    </p>
+
+                    <h2>
+                        Discipline
+                    </h2>
+
+                    <p>
+                        Developing confidence, discipline,
+                        teamwork and mental strength.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="venom-team-card h-100">
+
+                <div class="venom-team-number">
+                    03
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        EXPERIENCE
+                    </p>
+
+                    <h2>
+                        Competition
+                    </h2>
+
+                    <p>
+                        Giving players valuable match experience
+                        through competitive football.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Upcoming Matches -->
+<section class="venom-section">
+
+    <div class="venom-section-heading">
+
+        <div>
+
+            <p class="venom-eyebrow">
+                ON THE PITCH
+            </p>
+
+            <h2>
+                Upcoming Matches
+            </h2>
+
+        </div>
+
+        <a href="{% url 'match_list' %}"
+           class="venom-section-link">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        {% for match in next_matches %}
+
+        <div class="col-md-6">
+
+            <div class="venom-match-card">
+
+                <p class="venom-match-label">
+                    UPCOMING FIXTURE
+                </p>
+
+                <h3>
+
+                    {{ match.team.name }}
+
+                    <span>VS</span>
+
+                    {{ match.opponent }}
+
+                </h3>
+
+                <div class="venom-match-info">
+
+                    <span>
+                        📅 {{ match.date }}
+                    </span>
+
+                    <span>
+                        📍 {{ match.venue }}
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="venom-empty">
+                No upcoming matches scheduled.
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- Competitive Football -->
+<section class="venom-section">
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+
+            <p class="venom-eyebrow">
+                COMPETITIVE FOOTBALL
+            </p>
+
+            <h2>
+                Train. Compete.<br>
+                Take The Next Step.
+            </h2>
+
+            <p class="mt-3">
+                Venom Sports Football Academy actively participates
+                in competitive football platforms, giving players
+                opportunities to test their skills in real match
+                environments.
+            </p>
+
+        </div>
+
+        <div class="col-lg-5">
+
+            <div class="about-card">
+
+                <div class="card-body p-4">
+
+                    <p>
+                        <strong>MFA</strong><br>
+                        Mumbai Football Association
+                    </p>
+
+                    <p>
+                        <strong>TFA</strong><br>
+                        Thane Football Association
+                    </p>
+
+                    <p>
+                        <strong>DPDL</strong><br>
+                        Double Pass Development League
+                    </p>
+
+                    <p class="mb-0">
+                        <strong>Private & Outstation Tournaments</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Latest Announcements -->
+<section class="venom-section">
+
+    <div class="venom-section-heading">
+
+        <div>
+
+            <p class="venom-eyebrow">
+                STAY UPDATED
+            </p>
+
+            <h2>
+                Latest Announcements
+            </h2>
+
+        </div>
+
+        <a href="{% url 'announcement_list' %}"
+           class="venom-section-link">
+            All News →
+        </a>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        {% for a in latest_announcements %}
+
+        <div class="col-md-6">
+
+            <a href="{% url 'announcement_detail' a.pk %}"
+               class="venom-announcement">
+
+                <div>
+
+                    <p class="venom-announcement-label">
+                        VENOM NEWS
+                    </p>
+
+                    <h3>
+                        {{ a.title }}
+                    </h3>
+
+                </div>
+
+                <span class="venom-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="venom-empty">
+                No announcements yet.
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- Final CTA -->
+<section class="venom-cta">
+
+    <p class="venom-eyebrow">
+        VENOM SPORTS FOOTBALL ACADEMY
+    </p>
+
+    <h2>
+        YOUR GAME.<br>
+        YOUR FUTURE.
+    </h2>
+
+    <p>
+        Professional Training. Competitive Exposure.
+        Player Development.
+    </p>
+
+    <a href="{% url 'contact' %}"
+       class="btn btn-primary btn-lg">
+        Contact Venom
+    </a>
+
+</section>
+
+
+{% endblock %}

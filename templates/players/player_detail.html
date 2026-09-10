@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}{{ player.name }} - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <section class="venom-page-header">
+        <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+        <h1>{{ player.name }}</h1>
+
+        <p>{{ player.get_position_display }} · {{ player.team.name }}</p>
+    </section>
+
+    <div class="row g-4 mt-2">
+
+        <div class="col-md-6">
+            <div class="about-card h-100">
+                <div class="card-body">
+                    <h4>Player Details</h4>
+
+                    <p>
+                        <strong>Position:</strong>
+                        {{ player.get_position_display }}
+                    </p>
+
+                    <p>
+                        <strong>Age:</strong>
+                        {{ player.age }}
+                    </p>
+
+                    <p>
+                        <strong>Team:</strong>
+                        <a href="{% url 'team_detail' player.team.pk %}">
+                            {{ player.team.name }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="about-card h-100">
+                <div class="card-body">
+                    <h4>About the Player</h4>
+
+                    {% if player.bio %}
+                        <p>{{ player.bio }}</p>
+                    {% else %}
+                        <p class="text-muted">
+                            No player biography available yet.
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

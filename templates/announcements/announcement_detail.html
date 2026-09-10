@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ announcement.title }} - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <section class="venom-page-header">
+        <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+        <h1 class="announcement-title">{{ announcement.title }}</h1>
+
+        <p>Published {{ announcement.published_at }}</p>
+    </section>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <article class="about-card">
+                <div class="card-body p-4 p-md-5">
+
+                    <div class="announcement-body">
+                        {{ announcement.body|linebreaks }}
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'announcement_list' %}"
+           class="venom-team-button">
+            ← BACK TO ANNOUNCEMENTS
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

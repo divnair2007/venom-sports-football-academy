@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Matches - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<section class="venom-page-header">
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+    <h1>MATCHES</h1>
+
+    <p>Follow our teams, fixtures and results.</p>
+</section>
+
+<section class="mb-5">
+    <h2 class="mb-4">Upcoming Matches</h2>
+
+    <div class="row g-4">
+
+        {% for m in upcoming %}
+        <div class="col-md-6">
+
+            <article class="about-card h-100">
+                <div class="card-body">
+
+                    <p class="venom-eyebrow mb-2">
+                        UPCOMING FIXTURE
+                    </p>
+
+                    <h4>{{ m.team.name }}</h4>
+
+                    <p class="mb-2">
+                        <strong>vs {{ m.opponent }}</strong>
+                    </p>
+
+                    <p class="text-muted mb-1">
+                        📅 {{ m.date }}
+                    </p>
+
+                    {% if m.time %}
+                    <p class="text-muted mb-1">
+                        🕐 {{ m.time }}
+                    </p>
+                    {% endif %}
+
+                    <p class="text-muted mb-0">
+                        📍 {{ m.venue }}
+                    </p>
+
+                </div>
+            </article>
+
+        </div>
+
+        {% empty %}
+        <div class="col-12">
+            <div class="venom-empty">
+                No upcoming matches.
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+
+<section>
+    <h2 class="mb-4">Results</h2>
+
+    <div class="row g-4">
+
+        {% for m in past %}
+        <div class="col-md-6">
+
+            <article class="about-card h-100">
+                <div class="card-body">
+
+                    <p class="venom-eyebrow mb-2">
+                        MATCH RESULT
+                    </p>
+
+                    <h4>{{ m.team.name }}</h4>
+
+                    <p class="mb-2">
+                        <strong>vs {{ m.opponent }}</strong>
+                    </p>
+
+                    <p class="text-muted mb-1">
+                        📅 {{ m.date }}
+                    </p>
+
+                    <p class="mb-1">
+                        <strong>Result:</strong>
+                        {{ m.get_result_display }}
+                    </p>
+
+                    <p class="mb-0">
+                        <strong>Score:</strong>
+                        {{ m.score_summary }}
+                    </p>
+
+                </div>
+            </article>
+
+        </div>
+
+        {% empty %}
+        <div class="col-12">
+            <div class="venom-empty">
+                No past results.
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

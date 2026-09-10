@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Venom Sports Football Academy{% endblock %}
+    </title>
+
+    <meta
+        name="description"
+        content="Venom Sports Football Academy - Professional football training, competitive exposure and player development since June 2019."
+    >
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Venom Custom Stylesheet -->
+    <link
+        href="{% static 'css/style.css' %}?v=5"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+
+        <div class="container">
+
+
+            <!-- Brand -->
+
+            <a
+                class="navbar-brand venom-brand"
+                href="{% url 'home' %}"
+            >
+
+                <span class="venom-brand-main">
+                    VENOM
+                </span>
+
+                <span class="venom-brand-sub">
+                    SPORTS FOOTBALL ACADEMY
+                </span>
+
+            </a>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu"
+                aria-controls="navMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navigation Links -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="navMenu"
+            >
+
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'home' %}"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'about' %}"
+                        >
+                            About
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'team_list' %}"
+                        >
+                            Teams
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'player_list' %}"
+                        >
+                            Players
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'coach_list' %}"
+                        >
+                            Coaches
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'match_list' %}"
+                        >
+                            Matches
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'training_list' %}"
+                        >
+                            Training
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'announcement_list' %}"
+                        >
+                            News
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{% url 'contact' %}"
+                        >
+                            Contact
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+    {% if messages %}
+
+        <div class="container pt-3">
+
+            {% for message in messages %}
+
+                <div
+                    class="alert alert-{{ message.tags }}"
+                    role="alert"
+                >
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+
+    <div class="main-content">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="venom-footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- Academy -->
+
+            <div class="col-lg-5">
+
+                <h3 class="venom-footer-brand">
+                    VENOM
+                </h3>
+
+                <p class="venom-footer-academy">
+                    SPORTS FOOTBALL ACADEMY
+                </p>
+
+                <p class="mb-0">
+                    Professional football training,
+                    competitive exposure and player development
+                    since June 2019.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="col-md-3 col-lg-3">
+
+                <h5>
+                    QUICK LINKS
+                </h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'team_list' %}">
+                            Teams
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'player_list' %}">
+                            Players
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'coach_list' %}">
+                            Coaches
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Explore -->
+
+            <div class="col-md-3 col-lg-2">
+
+                <h5>
+                    EXPLORE
+                </h5>
+
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="{% url 'match_list' %}">
+                            Matches
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'training_list' %}">
+                            Training
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'announcement_list' %}">
+                            News
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Academy Info -->
+
+            <div class="col-md-6 col-lg-2">
+
+                <h5>
+                    ACADEMY
+                </h5>
+
+                <p class="mb-1">
+                    <strong>Since:</strong> 2019
+                </p>
+
+                <p class="mb-1">
+                    <strong>Age:</strong> 4–18 Years
+                </p>
+
+                <p class="mb-0">
+                    <strong>Centres:</strong> 8
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <!-- Copyright -->
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+
+            <p class="mb-0">
+
+                &copy; {% now "Y" %}
+                Venom Sports Football Academy.
+
+                All rights reserved.
+
+            </p>
+
+
+            <a
+                href="{% url 'contact' %}"
+                class="venom-footer-contact"
+            >
+                CONTACT VENOM →
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+</body>
+
+</html>

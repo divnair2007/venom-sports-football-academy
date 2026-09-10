@@ -1,0 +1,33 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}{{ coach.name }} - Venom Football Academy{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-3">{{ coach.name }}</h1>
+
+    <p>
+        <strong>Specialization:</strong> {{ coach.specialization }}
+    </p>
+
+    <p>
+        <strong>Experience:</strong> {{ coach.experience_years }} years
+    </p>
+
+    <p>
+        <strong>Teams:</strong>
+        {% for team in coach.teams.all %}
+            {{ team.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            No team assigned
+        {% endfor %}
+    </p>
+
+    {% if coach.bio %}
+        <h4 class="mt-4">About the Coach</h4>
+        <p>{{ coach.bio }}</p>
+    {% endif %}
+</div>
+{% endblock %}
+```

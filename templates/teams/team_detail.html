@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}{{ team.name }} - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="mb-4">
+        <h1>{{ team.name }}</h1>
+        <span class="about-card px-3 py-2 d-inline-block">
+            {{ team.category }}
+        </span>
+    </div>
+
+    {% if team.description %}
+        <p class="lead">{{ team.description }}</p>
+    {% endif %}
+
+    <hr>
+
+    <h3 class="mt-4">Players</h3>
+
+    <ul class="list-unstyled mb-5">
+
+        {% for player in team.players.all %}
+
+            <li class="about-card mb-3 p-3">
+
+                <a
+                    href="{% url 'player_detail' player.pk %}"
+                    class="text-decoration-none"
+                    style="color: var(--venom-accent);"
+                >
+                    {{ player.name }}
+                </a>
+
+                <span class="text-muted">
+                    - {{ player.get_position_display }}
+                </span>
+
+            </li>
+
+        {% empty %}
+
+            <li class="venom-empty">
+                No players assigned.
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
+
+    <h3>Coaches</h3>
+
+    <ul class="list-unstyled">
+
+        {% for coach in team.coaches.all %}
+
+            <li class="about-card mb-3 p-3">
+
+                <strong>{{ coach.name }}</strong>
+
+                <span class="text-muted">
+                    - {{ coach.specialization }}
+                </span>
+
+            </li>
+
+        {% empty %}
+
+            <li class="venom-empty">
+                No coaches assigned.
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+{% endblock %}

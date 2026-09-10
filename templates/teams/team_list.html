@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Our Teams - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<section class="venom-page-header">
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+    <h1>OUR TEAMS</h1>
+
+    <p>Developing players at every stage of their football journey.</p>
+</section>
+
+<section class="venom-teams">
+    <div class="row g-4">
+
+        {% for team in teams %}
+        <div class="col-md-4">
+
+            <article class="venom-team-card">
+
+                <div class="venom-team-number">
+                    {% if forloop.counter < 10 %}
+                        0{{ forloop.counter }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        VENOM TEAM
+                    </p>
+
+                    <h2>{{ team.name }}</h2>
+
+                    <p class="venom-team-category">
+                        {{ team.category }}
+                    </p>
+
+                    <a href="{% url 'team_detail' team.pk %}"
+                       class="venom-team-button">
+                        VIEW TEAM <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        {% empty %}
+        <div class="col-12">
+            <div class="venom-empty">
+                No teams added yet.
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<div class="row">
+    <!-- Fixed sidebar per System Design section 1.3 -->
+    <div class="col-md-3">
+        <div class="list-group">
+            <a href="{% url 'admin_dashboard' %}" class="list-group-item list-group-item-action active">Dashboard</a>
+            <a href="/admin/players/player/" class="list-group-item list-group-item-action">Players</a>
+            <a href="/admin/coaches/coach/" class="list-group-item list-group-item-action">Coaches</a>
+            <a href="/admin/teams/team/" class="list-group-item list-group-item-action">Teams</a>
+            <a href="/admin/matches/match/" class="list-group-item list-group-item-action">Matches</a>
+            <a href="/admin/training/trainingsession/" class="list-group-item list-group-item-action">Training</a>
+            <a href="/admin/announcements/announcement/" class="list-group-item list-group-item-action">Announcements</a>
+            <a href="{% url 'admin_logout' %}" class="list-group-item list-group-item-action text-danger">Logout</a>
+        </div>
+    </div>
+    <!-- Content panel -->
+    <div class="col-md-9">
+        <h1>Welcome, {{ request.user.username }}</h1>
+        <div class="row g-3 mt-2">
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ team_count }}</h5><p>Teams</p></div></div></div>
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ player_count }}</h5><p>Players</p></div></div></div>
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ coach_count }}</h5><p>Coaches</p></div></div></div>
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ match_count }}</h5><p>Matches</p></div></div></div>
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ training_count }}</h5><p>Training Sessions</p></div></div></div>
+            <div class="col-md-4"><div class="card"><div class="card-body"><h5>{{ announcement_count }}</h5><p>Announcements</p></div></div></div>
+        </div>
+        <p class="text-muted mt-4">For now this links out to Django's built-in admin (/admin) for CRUD. Replace these links with custom ModelForm views as you build them out (see build step 5).</p>
+    </div>
+</div>
+{% endblock %}

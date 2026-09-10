@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Coaches - Venom Football Academy{% endblock %}
+
+{% block content %}
+
+<section class="venom-page-header">
+
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+    <h1>OUR COACHES</h1>
+
+    <p>Meet the coaches developing the next generation of footballers.</p>
+
+</section>
+
+<section class="venom-players">
+
+    <div class="row g-4">
+
+        {% for coach in coaches %}
+
+        <div class="col-md-3">
+
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">
+
+                    {% if forloop.counter < 10 %}
+                        0{{ forloop.counter }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        VENOM COACH
+                    </p>
+
+                    <h2>{{ coach.name }}</h2>
+
+                    <p class="venom-team-category">
+                        {{ coach.specialization }}
+                    </p>
+
+                    <p class="small">
+                        {{ coach.experience_years }} years experience
+                    </p>
+
+                    <p class="small">
+                        {% for team in coach.teams.all %}
+                            {{ team.name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            No team assigned
+                        {% endfor %}
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-12">
+
+            <div class="venom-empty">
+                No coaches added yet.
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
+```
