@@ -5,8 +5,12 @@ Built for: Python 3.12.x, Django 5.2.x, MySQL 8.0.x
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load local environment variables from .env
+load_dotenv(BASE_DIR / ".env")
 
 
 # --- SECURITY -----------------------------------------------------------
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -83,21 +88,37 @@ TEMPLATES = [
 WSGI_APPLICATION = "venom_academy.wsgi.application"
 
 
-# --- DATABASE (MySQL 8.0.x) -----------------------------------------------
+# --- DATABASE ---------------------------------------------------------------
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("DB_NAME", "venom_academy"),
-        "USER": os.environ.get("DB_USER", "root"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "REMOVED_SECRET"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
-        "PORT": os.environ.get("DB_PORT", "3306"),
-        "OPTIONS": {
-            "charset": "utf8mb4",
-        },
+# Production / Render:
+# PostgreSQL database provided through DATABASE_URL.
+#
+# Local development:
+# MySQL database using the values from .env.
+
+if os.environ.get("DATABASE_URL"):
+    import dj_database_url
+
+    DATABASES = {
+        "default": dj_database_url.parse(
+            os.environ.get("DATABASE_URL"),
+            conn_max_age=600,
+        )
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": os.environ.get("DB_NAME", "venom_academy"),
+            "USER": os.environ.get("DB_USER", "root"),
+            "PASSWORD": os.environ.get("DB_PASSWORD", ""),
+            "HOST": os.environ.get("DB_HOST", "localhost"),
+            "PORT": os.environ.get("DB_PORT", "3306"),
+            "OPTIONS": {
+                "charset": "utf8mb4",
+            },
+        }
+    }
 
 
 # --- PASSWORD VALIDATION ---------------------------------------------------
@@ -147,6 +168,16 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# WhiteNoise static files configuration
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 # --- DEFAULT PRIMARY KEY ---------------------------------------------------
