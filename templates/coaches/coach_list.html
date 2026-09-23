@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Coaches - Venom Football Academy{% endblock %}
 
@@ -12,6 +13,14 @@
 
     <p>Meet the coaches developing the next generation of footballers.</p>
 
+</section>
+
+<!-- Main Coaches Group Image -->
+<section class="coaches-main-image-section">
+    <div class="coaches-main-image">
+        <img src="{% static 'images/coaches.jpeg' %}"
+             alt="Venom Sports Football Academy Coaches">
+    </div>
 </section>
 
 <section class="venom-players">
@@ -51,11 +60,17 @@
                     </p>
 
                     <p class="small">
+
                         {% for team in coach.teams.all %}
+
                             {{ team.name }}{% if not forloop.last %}, {% endif %}
+
                         {% empty %}
+
                             No team assigned
+
                         {% endfor %}
+
                     </p>
 
                 </div>
@@ -81,4 +96,3 @@
 </section>
 
 {% endblock %}
-```

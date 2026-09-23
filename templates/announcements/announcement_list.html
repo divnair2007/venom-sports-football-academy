@@ -7,11 +7,13 @@
 <section class="venom-page-header">
     <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
 
-    <h1 class="announcement-page-title">ANNOUNCEMENTS</h1>
+    <h1>ANNOUNCEMENTS</h1>
 
     <p>Latest news, updates and important information from the academy.</p>
 </section>
 
+
+<!-- ANNOUNCEMENTS -->
 <section class="venom-announcements">
 
     <div class="row g-4">
@@ -19,18 +21,27 @@
         {% for a in announcements %}
         <div class="col-md-6">
 
-            <article class="about-card h-100">
-                <div class="card-body">
+            <article class="venom-team-card h-100">
 
-                    <p class="venom-eyebrow mb-2">
+                <div class="venom-team-number">
+                    {% if forloop.counter < 10 %}
+                        0{{ forloop.counter }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                </div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
                         ACADEMY UPDATE
                     </p>
 
-                    <h3 class="card-title">
+                    <h2>
                         {{ a.title }}
-                    </h3>
+                    </h2>
 
-                    <p class="text-muted small mb-3">
+                    <p class="venom-team-category">
                         Published {{ a.published_at }}
                     </p>
 
@@ -40,6 +51,7 @@
                     </a>
 
                 </div>
+
             </article>
 
         </div>
@@ -51,6 +63,110 @@
             </div>
         </div>
         {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- TRAINING CENTRES -->
+<section class="venom-announcements training-centres-section">
+
+    <section class="venom-page-header">
+        <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+
+        <h2>TRAINING CENTRES</h2>
+
+        <p>Our academy training locations across the region.</p>
+    </section>
+
+
+    <div class="row g-4">
+
+        <!-- Ambernath -->
+        <div class="col-md-4">
+
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">01</div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        AMBERNATH LOCATIONS
+                    </p>
+
+                    <h2>AMBERNATH</h2>
+
+                    <p class="venom-team-category">
+                        • Strikers Arena, Palegaon
+                    </p>
+
+                    <p class="venom-team-category">
+                        • Sarvoday Nagar
+                    </p>
+
+                    <p class="venom-team-category">
+                        • Chikhloli
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Badlapur -->
+        <div class="col-md-4">
+
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">02</div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        BADLAPUR LOCATIONS
+                    </p>
+
+                    <h2>BADLAPUR</h2>
+
+                    <p class="venom-team-category">
+                        • Kharvai
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- Kalyan -->
+        <div class="col-md-4">
+
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">03</div>
+
+                <div class="venom-team-content">
+
+                    <p class="venom-team-label">
+                        KALYAN LOCATION
+                    </p>
+
+                    <h2>KALYAN</h2>
+
+                    <p class="venom-team-category">
+                        • Eva World School, Kalyan West
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
 
     </div>
 

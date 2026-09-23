@@ -4,61 +4,80 @@
 
 {% block content %}
 
-<div class="container py-4">
+<section class="venom-page-header">
+    <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
 
-    <section class="venom-page-header">
-        <p class="venom-eyebrow">VENOM FOOTBALL ACADEMY</p>
+    <h1>{{ player.name }}</h1>
 
-        <h1>{{ player.name }}</h1>
+    <p>
+        {{ player.get_position_display }}
+        ·
+        {{ player.team.name }}
+    </p>
+</section>
 
-        <p>{{ player.get_position_display }} · {{ player.team.name }}</p>
-    </section>
+<section class="venom-players">
+    <div class="row g-4">
 
-    <div class="row g-4 mt-2">
-
+        <!-- Player Details -->
         <div class="col-md-6">
-            <div class="about-card h-100">
-                <div class="card-body">
-                    <h4>Player Details</h4>
+            <article class="venom-team-card h-100">
 
-                    <p>
+                <div class="venom-team-number">01</div>
+
+                <div class="venom-team-content">
+                    <p class="venom-team-label">PLAYER PROFILE</p>
+
+                    <h2>PLAYER DETAILS</h2>
+
+                    <p class="venom-team-category">
                         <strong>Position:</strong>
                         {{ player.get_position_display }}
                     </p>
 
-                    <p>
+                    <p class="venom-team-category">
                         <strong>Age:</strong>
                         {{ player.age }}
                     </p>
 
-                    <p>
+                    <p class="venom-team-category">
                         <strong>Team:</strong>
-                        <a href="{% url 'team_detail' player.team.pk %}">
+                        <a href="{% url 'team_detail' player.team.pk %}"
+                           class="venom-team-button">
                             {{ player.team.name }}
                         </a>
                     </p>
                 </div>
-            </div>
+
+            </article>
         </div>
 
+        <!-- About Player -->
         <div class="col-md-6">
-            <div class="about-card h-100">
-                <div class="card-body">
-                    <h4>About the Player</h4>
+            <article class="venom-team-card h-100">
+
+                <div class="venom-team-number">02</div>
+
+                <div class="venom-team-content">
+                    <p class="venom-team-label">PLAYER BIO</p>
+
+                    <h2>ABOUT THE PLAYER</h2>
 
                     {% if player.bio %}
-                        <p>{{ player.bio }}</p>
+                        <p class="venom-team-category">
+                            {{ player.bio }}
+                        </p>
                     {% else %}
-                        <p class="text-muted">
+                        <p class="venom-team-category">
                             No player biography available yet.
                         </p>
                     {% endif %}
                 </div>
-            </div>
+
+            </article>
         </div>
 
     </div>
-
-</div>
+</section>
 
 {% endblock %}

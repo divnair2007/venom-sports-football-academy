@@ -25,7 +25,7 @@
 
     <!-- Venom Custom Stylesheet -->
     <link
-        href="{% static 'css/style.css' %}?v=5"
+        href="{% static 'css/style.css' %}?v=6"
         rel="stylesheet"
     >
 
@@ -52,6 +52,12 @@
                 class="navbar-brand venom-brand"
                 href="{% url 'home' %}"
             >
+
+                <img
+                    src="{% static 'images/logo.jpeg' %}"
+                    alt="Venom Sports Football Academy Logo"
+                    class="venom-logo"
+                >
 
                 <span class="venom-brand-main">
                     VENOM
@@ -408,3 +414,15 @@
 </body>
 
 </html>
+```
+
+And copy-paste this **at the very bottom of `style.css`**:
+
+```css
+.venom-logo {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-right: 6px;
+    vertical-align: middle;
+}

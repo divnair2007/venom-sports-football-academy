@@ -1,19 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Contact - Venom Sports Football Academy{% endblock %}
 
 {% block content %}
 
-<!-- Page Header -->
 <section class="venom-page-header">
 
     <p class="venom-eyebrow">
         VENOM SPORTS FOOTBALL ACADEMY
     </p>
 
-    <h1>
-        CONTACT US
-    </h1>
+    <h1>CONTACT US</h1>
 
     <p>
         Get in touch with Venom Sports Football Academy
@@ -23,66 +21,68 @@
 </section>
 
 
-<!-- Contact Introduction -->
 <section class="venom-section">
 
     <div class="row align-items-center g-5">
 
         <div class="col-lg-7">
 
-            <p class="venom-eyebrow">
+            <p class="venom-eyebrow" style="font-size: 1.05rem;">
                 GET STARTED
             </p>
 
-            <h2>
+            <h2 style="font-size: 2.4rem;">
                 Ready To Take<br>
                 The Next Step?
             </h2>
 
-            <p class="mt-3">
+            <p class="mt-3" style="font-size: 1.15rem; line-height: 1.8;">
                 Venom Sports Football Academy provides professional
                 football training for players aged
                 <strong>4 to 18 years</strong>.
             </p>
 
-            <p>
+            <p style="font-size: 1.15rem; line-height: 1.8;">
                 With professional coaching, competitive exposure
                 and player development at the heart of our academy,
                 we aim to help young footballers grow both on and
                 off the pitch.
             </p>
 
+            <div class="mt-4">
+
+                <p class="mb-3" style="font-size: 1.15rem;">
+                    <strong>Contact Number:</strong>
+                    +91 73874 45002
+                </p>
+
+                <p class="mb-3" style="font-size: 1.15rem;">
+                    <strong>Contact Person:</strong>
+                    Suresh Raju
+                </p>
+
+                <p class="mb-0" style="font-size: 1.15rem;">
+                    <strong>Instagram:</strong>
+                    <a href="https://www.instagram.com/venomsportsindia/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="color: var(--venom-accent); text-decoration: none;">
+                        @venomsportsindia
+                    </a>
+                </p>
+
+            </div>
+
         </div>
 
 
         <div class="col-lg-5">
 
-            <div class="about-card h-100">
+            <div class="about-card h-100 p-0 overflow-hidden">
 
-                <div class="card-body p-4">
-
-                    <p class="venom-eyebrow">
-                        ACADEMY
-                    </p>
-
-                    <h3>
-                        Venom Sports Football Academy
-                    </h3>
-
-                    <p class="mb-2">
-                        <strong>Established:</strong> June 2019
-                    </p>
-
-                    <p class="mb-2">
-                        <strong>Age Group:</strong> 4–18 Years
-                    </p>
-
-                    <p class="mb-0">
-                        <strong>Coaching:</strong>
-                        AIFF D & C Licensed Coaches
-                    </p>
-
-                </div>
+                <img src="{% static 'images/contact.jpeg' %}"
+                     alt="Venom Sports Football Academy"
+                     style="width: 100%; height: auto; display: block;">
 
             </div>
 
@@ -93,7 +93,6 @@
 </section>
 
 
-<!-- Training Centres -->
 <section class="venom-section">
 
     <div class="venom-section-heading">
@@ -115,23 +114,31 @@
 
     <div class="row g-4">
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="venom-team-card h-100">
 
-                <div class="venom-team-number">
-                    01
-                </div>
+                <div class="venom-team-number">01</div>
 
                 <div class="venom-team-content">
 
                     <p class="venom-team-label">
-                        TRAINING CENTRE
+                        AMBERNATH LOCATIONS
                     </p>
 
-                    <h2>
-                        Ambernath
-                    </h2>
+                    <h2>Ambernath</h2>
+
+                    <p class="venom-team-category">
+                        • Strikers Arena, Palegaon
+                    </p>
+
+                    <p class="venom-team-category">
+                        • Sarvoday Nagar
+                    </p>
+
+                    <p class="venom-team-category">
+                        • Chikhloli
+                    </p>
 
                 </div>
 
@@ -140,23 +147,23 @@
         </div>
 
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="venom-team-card h-100">
 
-                <div class="venom-team-number">
-                    02
-                </div>
+                <div class="venom-team-number">02</div>
 
                 <div class="venom-team-content">
 
                     <p class="venom-team-label">
-                        TRAINING CENTRE
+                        BADLAPUR LOCATIONS
                     </p>
 
-                    <h2>
-                        Palegaon
-                    </h2>
+                    <h2>Badlapur</h2>
+
+                    <p class="venom-team-category">
+                        • Kharvai
+                    </p>
 
                 </div>
 
@@ -165,148 +172,23 @@
         </div>
 
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="venom-team-card h-100">
 
-                <div class="venom-team-number">
-                    03
-                </div>
+                <div class="venom-team-number">03</div>
 
                 <div class="venom-team-content">
 
                     <p class="venom-team-label">
-                        TRAINING CENTRE
+                        KALYAN LOCATION
                     </p>
 
-                    <h2>
-                        Chikhloli
-                    </h2>
+                    <h2>Kalyan</h2>
 
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-3">
-
-            <div class="venom-team-card h-100">
-
-                <div class="venom-team-number">
-                    04
-                </div>
-
-                <div class="venom-team-content">
-
-                    <p class="venom-team-label">
-                        TRAINING CENTRE
+                    <p class="venom-team-category">
+                        • Eva World School, Kalyan West
                     </p>
-
-                    <h2>
-                        Sarvoday Nagar
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-3">
-
-            <div class="venom-team-card h-100">
-
-                <div class="venom-team-number">
-                    05
-                </div>
-
-                <div class="venom-team-content">
-
-                    <p class="venom-team-label">
-                        TRAINING CENTRE
-                    </p>
-
-                    <h2>
-                        Badlapur
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-3">
-
-            <div class="venom-team-card h-100">
-
-                <div class="venom-team-number">
-                    06
-                </div>
-
-                <div class="venom-team-content">
-
-                    <p class="venom-team-label">
-                        TRAINING CENTRE
-                    </p>
-
-                    <h2>
-                        Kharvai
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-3">
-
-            <div class="venom-team-card h-100">
-
-                <div class="venom-team-number">
-                    07
-                </div>
-
-                <div class="venom-team-content">
-
-                    <p class="venom-team-label">
-                        TRAINING CENTRE
-                    </p>
-
-                    <h2>
-                        Kalyan
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-3">
-
-            <div class="venom-team-card h-100">
-
-                <div class="venom-team-number">
-                    08
-                </div>
-
-                <div class="venom-team-content">
-
-                    <p class="venom-team-label">
-                        TRAINING CENTRE
-                    </p>
-
-                    <h2>
-                        Eva World School
-                    </h2>
 
                 </div>
 
@@ -319,7 +201,6 @@
 </section>
 
 
-<!-- Competitive Football -->
 <section class="venom-section">
 
     <div class="row align-items-center g-5">
@@ -383,7 +264,6 @@
 </section>
 
 
-<!-- Final CTA -->
 <section class="venom-cta">
 
     <p class="venom-eyebrow">
