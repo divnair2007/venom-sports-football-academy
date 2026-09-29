@@ -1,0 +1,342 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$skfZTcGaTvWqD7RFl6eiWt$e7SlzI+83D9JnRqeDtUBMPX2sgC1hXTigs08Ia2ylfI=",
+    "last_login": "2026-09-10T14:12:50.313Z",
+    "is_superuser": true,
+    "username": "headcoach",
+    "first_name": "",
+    "last_name": "",
+    "email": "div.nair2007@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-06T06:23:02.862Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 1,
+  "fields": {
+    "name": "Development",
+    "category": "U-10",
+    "description": "Developing fundamental football skills, ball control, passing, movement and an understanding of the game.",
+    "created_at": "2026-09-06T07:37:56.841Z"
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 2,
+  "fields": {
+    "name": "Tots",
+    "category": "U-8",
+    "description": "A fun and engaging introduction to football, focusing on basic skills, coordination, teamwork and enjoyment of the game.",
+    "created_at": "2026-09-06T07:38:12.195Z"
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 3,
+  "fields": {
+    "name": "Core",
+    "category": "U-14",
+    "description": "Focused on developing technical ability, tactical awareness, teamwork and competitive match experience.",
+    "created_at": "2026-09-06T07:39:31.888Z"
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 1,
+  "fields": {
+    "name": "Divya Nair",
+    "specialization": "Youth Development",
+    "experience_years": 2,
+    "photo": "",
+    "bio": "A dedicated coach focused on developing young players through technical training, teamwork, confidence building and a strong understanding of the game.",
+    "teams": [
+      1
+    ]
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 2,
+  "fields": {
+    "name": "Nishant Charan",
+    "specialization": "Youth football and fundamentals",
+    "experience_years": 5,
+    "photo": "",
+    "bio": "An experienced youth coach who focuses on building fundamental football skills, coordination, confidence and enjoyment of the game in young players.",
+    "teams": [
+      2
+    ]
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 3,
+  "fields": {
+    "name": "Devyani Mohape",
+    "specialization": "Technical and Tactical Development",
+    "experience_years": 3,
+    "photo": "",
+    "bio": "A passionate coach focused on improving players' technical ability, tactical awareness, decision-making and competitive performance.",
+    "teams": [
+      3
+    ]
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 4,
+  "fields": {
+    "name": "Sarvadnya Nikam",
+    "specialization": "Fitness and Understanding",
+    "experience_years": 2,
+    "photo": "",
+    "bio": "A dedicated fitness coach who focuses on improving players’ strength, stamina, speed and overall physical fitness through structured training.",
+    "teams": [
+      1
+    ]
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 5,
+  "fields": {
+    "name": "Suresh Raju",
+    "specialization": "Overall Coaching",
+    "experience_years": 12,
+    "photo": "",
+    "bio": "Our head-coach and owner with the strongest football and sweetest heart!",
+    "teams": [
+      2
+    ]
+  }
+},
+{
+  "model": "coaches.coach",
+  "pk": 6,
+  "fields": {
+    "name": "Abhijith Guruswamy",
+    "specialization": "Goalkeeping",
+    "experience_years": 4,
+    "photo": "",
+    "bio": "No goal will be conceded with Abhijith Sir's goalkeeping skills inculcated into our players!",
+    "teams": [
+      1,
+      3,
+      2
+    ]
+  }
+},
+{
+  "model": "players.player",
+  "pk": 1,
+  "fields": {
+    "name": "Lakshit Patil",
+    "age": 6,
+    "position": "GK",
+    "team": 2,
+    "profile_photo": "",
+    "bio": "A cheerful young goalkeeper developing his reflexes, coordination and confidence while learning the fundamentals of goalkeeping.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 2,
+  "fields": {
+    "name": "Aarav Mehta",
+    "age": 7,
+    "position": "MID",
+    "team": 2,
+    "profile_photo": "",
+    "bio": "A young and energetic midfielder developing his passing, coordination and confidence on the ball.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 3,
+  "fields": {
+    "name": "Vihaan Shah",
+    "age": 7,
+    "position": "FWD",
+    "team": 2,
+    "profile_photo": "",
+    "bio": "A lively young forward who enjoys attacking play and is developing his dribbling, movement and finishing skills.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 4,
+  "fields": {
+    "name": "Anaya Patil",
+    "age": 6,
+    "position": "DEF",
+    "team": 2,
+    "profile_photo": "",
+    "bio": "A confident young defender who is learning the basics of positioning, passing and teamwork while enjoying every moment on the pitch.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 5,
+  "fields": {
+    "name": "Riya Sharma",
+    "age": 9,
+    "position": "MID",
+    "team": 1,
+    "profile_photo": "",
+    "bio": "A creative young midfielder developing her passing, ball control and understanding of the game.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 6,
+  "fields": {
+    "name": "Aarav Kapoor",
+    "age": 9,
+    "position": "DEF",
+    "team": 1,
+    "profile_photo": "",
+    "bio": "A disciplined young defender who is building strong fundamentals in positioning, tackling and teamwork.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 7,
+  "fields": {
+    "name": "Myra Desai",
+    "age": 9,
+    "position": "FWD",
+    "team": 1,
+    "profile_photo": "",
+    "bio": "An enthusiastic forward with a love for attacking football, developing her dribbling, movement and finishing.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 8,
+  "fields": {
+    "name": "Kabeer Kamble",
+    "age": 9,
+    "position": "GK",
+    "team": 1,
+    "profile_photo": "",
+    "bio": "A focused young goalkeeper developing his reflexes, positioning and confidence between the posts.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 9,
+  "fields": {
+    "name": "Arjun Menon",
+    "age": 13,
+    "position": "MID",
+    "team": 3,
+    "profile_photo": "",
+    "bio": "A technically strong midfielder with good vision and an improving understanding of tactical play.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 10,
+  "fields": {
+    "name": "Riya Deshmukh",
+    "age": 12,
+    "position": "DEF",
+    "team": 3,
+    "profile_photo": "",
+    "bio": "A composed defender focused on strong positioning, accurate passing and disciplined teamwork.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 11,
+  "fields": {
+    "name": "Sharanya Nair",
+    "age": 13,
+    "position": "FWD",
+    "team": 3,
+    "profile_photo": "",
+    "bio": "A determined forward with excellent movement who is developing her finishing and attacking decision-making.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 12,
+  "fields": {
+    "name": "Advait Rao",
+    "age": 14,
+    "position": "GK",
+    "team": 3,
+    "profile_photo": "",
+    "bio": "A focused goalkeeper developing his reflexes, positioning and ability to organize the defence.",
+    "joined_on": "2026-09-06"
+  }
+},
+{
+  "model": "matches.match",
+  "pk": 1,
+  "fields": {
+    "team": 3,
+    "opponent": "Golden Eagles FA",
+    "date": "2026-09-13",
+    "time": "18:00:00",
+    "venue": "Palava Turf",
+    "result": "SCHEDULED",
+    "score_summary": ""
+  }
+},
+{
+  "model": "matches.match",
+  "pk": 2,
+  "fields": {
+    "team": 1,
+    "opponent": "Golden Eagles FA",
+    "date": "2026-09-10",
+    "time": "06:00:00",
+    "venue": "Palava Turf",
+    "result": "WIN",
+    "score_summary": "3-0"
+  }
+},
+{
+  "model": "training.trainingsession",
+  "pk": 1,
+  "fields": {
+    "team": 2,
+    "date": "2026-09-11",
+    "time": "18:00:00",
+    "venue": "Chikloli Turf",
+    "focus_area": "Fitness",
+    "notes": "All players to carry their waterbottles and come in proper kitting. Shoes are compulsory."
+  }
+},
+{
+  "model": "announcements.announcement",
+  "pk": 1,
+  "fields": {
+    "title": "Attention Parents!",
+    "body": "As we approach the TFA, there will be new specialized kitting made for all players. Please contact us and confirm your child's name for the same.\r\n\r\nWith Regards,\r\nVenom FA",
+    "posted_by": [
+      "headcoach"
+    ],
+    "published_at": "2026-09-10T14:34:54.508Z",
+    "is_published": true
+  }
+}
+]
