@@ -2252,3 +2252,9 @@ main {
     }
 
 }
+/* TEST - HOME HERO IMAGE */
+.venom-hero-image img {
+    width: 300px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+}

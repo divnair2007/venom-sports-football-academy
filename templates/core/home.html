@@ -5,6 +5,7 @@
 
 {% block content %}
 
+
 <!-- Hero Section -->
 <section class="venom-hero">
 
@@ -40,11 +41,12 @@
 
     </div>
 
+
     <div class="venom-hero-image">
 
         <img src="{% static 'images/home.jpeg' %}"
              alt="Venom Sports Football Academy"
-             style="width: 380px !important; height: 320px !important; object-fit: cover !important; transform: translateX(256px);">
+             style="width: 340px !important; height: 300px !important; max-width: 340px !important; max-height: 300px !important; object-fit: contain !important; display: block !important;">
 
     </div>
 
@@ -517,5 +519,6 @@
     </div>
 
 </section>
+
 
 {% endblock %}
